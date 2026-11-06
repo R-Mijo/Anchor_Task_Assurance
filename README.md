@@ -6,7 +6,7 @@ Formerly Adaptive Grounded Prompting. Anchor checks evidence and verification be
 
 AGP is an experimental Python reference implementation for checking whether an AI-generated task result meets an explicit evidence and release policy. It combines task classification, claim-to-source records, required verification checks, a conservative release gate, and portable receipts.
 
-**Version 0.2.1 • Research prototype • Proprietary; all rights reserved**
+**0.2.1 | Python 3.11+ | Proprietary | No third-party runtime dependencies**
 
 The project demonstrates software behavior. It has not yet demonstrated that AGP improves model accuracy, prevents prompt injection, or reduces business costs. The first release does not connect to a model provider, retrieve documents, authenticate approvers, execute payments, or provide a hosted service.
 
