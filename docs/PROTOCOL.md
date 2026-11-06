@@ -1,8 +1,8 @@
-# AGP protocol: overview and document map
+# Anchor protocol: overview and document map
 
-**Project:** Anchor Task Assurance. **Method:** Adaptive Grounded Prompting (AGP). **Status:** experimental reference protocol; existing methodology specification 0.2. This is a documented operating procedure for AI task assurance, not an established industry standard or a network/wire protocol.
+**Name:** Anchor Task Assurance. **Status:** experimental reference protocol; existing methodology specification 0.2. This is a documented operating procedure for AI task assurance, not an established industry standard or a network/wire protocol.
 
-Anchor is the protocol home and includes a Python reference implementation. [ActionGate](https://github.com/R-Mijo/ActionGate) is the companion software toolkit for release checks and tool-action enforcement. AGP is the method name and retained Python import, not an additional product or a repository being merged into ActionGate.
+Anchor is the protocol home and includes a Python reference implementation under the import `anchor_task_assurance`. [ActionGate](https://github.com/R-Mijo/ActionGate) is the companion software toolkit for release checks and tool-action enforcement. The two repositories remain separate.
 
 ## The operating procedure
 
@@ -22,14 +22,14 @@ This overview introduces no new scoring thresholds, protocol version or behavior
 | --- | --- |
 | [METHODOLOGY.md](METHODOLOGY.md) | Operational method: nine stages, task characteristics, provisional assurance/verification levels, evidence and release rules. |
 | [APPLY_TO_YOUR_WORKFLOW.md](APPLY_TO_YOUR_WORKFLOW.md) | Integration responsibilities: generation, trusted verification, exact-draft binding, enforcement and authenticated review. |
-| [Reference gate](../agp/core.py) | Exact behavior of this Python implementation. Current code policy identifier: `agp-reference-controls-0.2.0`. Package version and policy identifier are separate. |
-| [VALIDATION_PROTOCOL.md](VALIDATION_PROTOCOL.md) | Research/evaluation plan. This is the protocol for studying AGP, not the operating procedure or proof that AGP improves accuracy. |
+| [Reference gate](../anchor_task_assurance/core.py) | Exact behavior of this Python implementation. Current code policy identifier: `anchor-reference-controls-0.2.2`. Package version and policy identifier are separate. |
+| [VALIDATION_PROTOCOL.md](VALIDATION_PROTOCOL.md) | Research/evaluation plan. This is the protocol for studying Anchor, not the operating procedure or proof that Anchor improves accuracy. |
 | [RELATED_WORK.md](RELATED_WORK.md) and [CRITICAL_REVIEW.md](CRITICAL_REVIEW.md) | Prior work, limitations and claims that have not been established. |
 | [PROJECT_RELATIONSHIP.md](PROJECT_RELATIONSHIP.md) | Boundaries, current package relationship and one company example spanning Anchor and ActionGate. |
 
 ## What the reference code can establish
 
-The `agp` package checks typed profiles, claim/source references, source validity dates, required check flags, review settings and release outcomes. It produces checksum-protected receipts. The current implementation accepts trusted verifier findings; it does not independently establish their truth, complete claim coverage, authentic approval identity or semantic evidence support. A checksum is not a signature. The application must enforce a withheld decision and protect the reviewed draft from substitution.
+The `anchor_task_assurance` package checks typed profiles, claim/source references, source validity dates, required check flags, review settings and release outcomes. It produces checksum-protected receipts. The current implementation accepts trusted verifier findings; it does not independently establish their truth, complete claim coverage, authentic approval identity or semantic evidence support. A checksum is not a signature. The application must enforce a withheld decision and protect the reviewed draft from substitution.
 
 ## Reading and adopting the method
 

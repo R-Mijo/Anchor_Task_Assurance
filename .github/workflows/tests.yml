@@ -17,7 +17,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m pip install .
       - run: python -m unittest discover -s tests -v
-      - run: python -m agp demo
+      - run: python -m anchor_task_assurance demo
       - name: Import installed package outside the checkout
         working-directory: ${{ runner.temp }}
-        run: python -I -c "import agp; print(agp.__version__)"
+        run: python -I -c "import anchor_task_assurance; print(anchor_task_assurance.__version__)"
