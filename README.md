@@ -1,3 +1,5 @@
+![Product banner](docs/assets/banner.svg)
+
 # Anchor Task Assurance
 
 **Evidence-based task assurance — created by Marco Armijo (R-Mijo).**
@@ -9,6 +11,10 @@ AGP is an experimental Python reference implementation for checking whether an A
 **0.2.1 | Python 3.11+ | Proprietary | No third-party runtime dependencies**
 
 The project demonstrates software behavior. It has not yet demonstrated that AGP improves model accuracy, prevents prompt injection, or reduces business costs. The first release does not connect to a model provider, retrieve documents, authenticate approvers, execute payments, or provide a hosted service.
+
+## In plain English
+
+Anchor is the quality checkpoint for an AI-generated answer. It asks whether required checks were completed and whether important claims have acceptable evidence. For example, it can withhold a customer-care answer when its policy source is outdated. It does not execute refunds or prove a source is true.
 
 ## Run it in five minutes
 
