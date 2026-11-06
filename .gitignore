@@ -1,11 +1,9 @@
 __pycache__/
 *.py[cod]
 .venv/
-.env
-.env.*
-results/
-dist/
-build/
 *.egg-info/
-.DS_Store
-Thumbs.db
+build/
+dist/
+results/
+*.restore-*.json
+scrubbee-restore-*.json

@@ -138,14 +138,14 @@ To update a document through the website, open it, choose the pencil edit button
 
 If an upload is needed, use Add file then Upload files and upload the package contents into the repository root. Do not upload the enclosing ZIP, a nested agp-starter folder, results, __pycache__, local credentials, or the whole Documents directory. Include the hidden .github workflow folder; if the browser omits dotfolders, create `.github/workflows/tests.yml` through Add file then Create new file and paste that file's content. Preserve directory structure.
 
-GitHub's instructions for [creating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) and [uploading files](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) explain the current interface. The MIT license permits reuse and requires retention of its notice; it does not reserve exclusive rights to the broad methodology. See [GitHub's license guidance](https://choosealicense.com/licenses/mit/).
+Current ownership and use permissions are governed by the proprietary root LICENSE. Public GitHub viewing/forking permissions and earlier license grants remain separate; consult the licensing history.
 
 ## 11 Use the next 24 hours well
 
 | Time from starting | Concrete result |
 |---|---|
 | Hours 0 to 2 | Read the verdict and limitations, run tests and demo, inspect a receipt and a blocked result. |
-| Hours 2 to 4 | Review the public README, attribution, MIT license, methodology and corrected cases. |
+| Hours 2 to 4 | Review the public README, attribution, proprietary license, methodology and corrected cases. |
 | Hours 4 to 6 | Confirm the GitHub upload and automated checks; fix any reproducible failure. |
 | Hours 6 to 12 | Rehearse a few fresh baseline and AGP prompts; retain actual responses and record limitations. |
 | Hours 12 to 24 | Invite independent testing, select a bounded workflow owner, and freeze a real pilot plan. |

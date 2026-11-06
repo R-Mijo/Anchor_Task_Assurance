@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved.
+# SPDX-License-Identifier: LicenseRef-Proprietary
 """Tests use synthetic fixtures only; no model performance is measured."""
 
 from hashlib import sha256

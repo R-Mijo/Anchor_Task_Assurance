@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved.
+# SPDX-License-Identifier: LicenseRef-Proprietary
 """Adaptive Grounded Prompting reference controls.
 
 This experimental package enforces structural release checks. It does not prove
@@ -9,7 +11,7 @@ from .core import (
     Source, TaskProfile, build_receipt, decide_release, verify_receipt,
 )
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __all__ = [
     "POLICY_VERSION", "REQUIRED_CHECKS", "Claim", "PAL", "Relationship",
     "ReleaseDecision", "Source", "TaskProfile", "build_receipt",

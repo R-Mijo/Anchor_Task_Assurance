@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved.
+# SPDX-License-Identifier: LicenseRef-Proprietary
 """Regression and adversarial checks for the experimental reference gate."""
 
 from dataclasses import FrozenInstanceError

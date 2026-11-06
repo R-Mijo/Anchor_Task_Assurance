@@ -1,10 +1,12 @@
-# AGP Task Assurance
+# Anchor Task Assurance
 
-**Adaptive Grounded Prompting — created by Marco A.**
+**Evidence-based task assurance — created by Marco Armijo (R-Mijo).**
+
+Formerly Adaptive Grounded Prompting. Anchor checks evidence and verification before a task result is released. Agent tool authorization lives in the separate [Meeho ActionGate](https://github.com/R-Mijo/meeho-actiongate) project.
 
 AGP is an experimental Python reference implementation for checking whether an AI-generated task result meets an explicit evidence and release policy. It combines task classification, claim-to-source records, required verification checks, a conservative release gate, and portable receipts.
 
-**Version 0.2.0 • Research prototype • MIT licensed**
+**Version 0.2.1 • Research prototype • Proprietary; all rights reserved**
 
 The project demonstrates software behavior. It has not yet demonstrated that AGP improves model accuracy, prevents prompt injection, or reduces business costs. The first release does not connect to a model provider, retrieve documents, authenticate approvers, execute payments, or provide a hosted service.
 
@@ -63,3 +65,7 @@ The ingredients have substantial prior work, including [Microsoft Agentic Behavi
 Useful early contributions include a real provider adapter, independent replication, stronger verifier coverage records, workflow-specific policy configuration, authenticated approval records, and integration examples. A reproducible failure report is welcome.
 
 Copyright (c) 2026 Marco A. See [LICENSE](LICENSE).
+
+## Ownership
+
+Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved. The current revision is proprietary with publicly visible source. See [LICENSE](LICENSE). Earlier AGP 0.2 material was public under MIT; existing grants are not revoked. See [licensing history](docs/LICENSING_HISTORY.md).

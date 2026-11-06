@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved.
+# SPDX-License-Identifier: LicenseRef-Proprietary
 """Offline experiment preparation and mechanical screening.
 
 No function calls a model. Mechanical matches are screening results, not semantic
@@ -242,7 +244,7 @@ def prepare_study(directory: Path, repeats: int = 3, seed: int = 20261029,
     directory = Path(directory)
     if directory.exists():
         raise ValueError("Study directory already exists; choose a new directory to avoid mixing runs")
-    data = data_directory or Path(__file__).resolve().parents[1] / "data"
+    data = data_directory or Path(__file__).resolve().parent / "data"
     filenames = ("cases.jsonl", "expense_policy_v1.1.txt", "expense_policy_v0.9.txt")
     for name in filenames:
         if not (data / name).is_file():

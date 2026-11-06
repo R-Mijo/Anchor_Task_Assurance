@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved.
+# SPDX-License-Identifier: LicenseRef-Proprietary
 """Small, deliberately conservative reference release gate.
 
 Callers must supply checks from trusted validators, not from the generator.
