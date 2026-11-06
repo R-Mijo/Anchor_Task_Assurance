@@ -2,11 +2,20 @@
 
 # Anchor Task Assurance
 
-**Evidence-based task assurance — created by Marco Armijo (R-Mijo).**
+**The AI Fact-Checker — an evidence-and-review protocol with Python reference code.**
 
-Formerly Adaptive Grounded Prompting. Anchor checks evidence and verification before a task result is released. Agent tool authorization lives in the separate ActionGate project.
+Anchor Task Assurance is the home of **Adaptive Grounded Prompting (AGP)**: a proposed protocol for deciding whether an AI-generated task result has the evidence and verification required for release. This repository contains the protocol documentation, a reference implementation and evaluation tooling. Created by Marco Armijo (R-Mijo).
 
-AGP is an experimental Python reference implementation for checking whether an AI-generated task result meets an explicit evidence and release policy. It combines task classification, claim-to-source records, required verification checks, a conservative release gate, and portable receipts.
+The Python package retains the technical name `agp`. It demonstrates task classification, claim-to-source records, required verification checks, a conservative release gate and portable receipts. The protocol is experimental; it is not an independently certified or externally adopted standard.
+
+## Protocol and tool: choose the right repository
+
+| Repository | Role | Start here |
+| --- | --- | --- |
+| **Anchor Task Assurance — this repository** | Defines the AGP evidence-and-review workflow and supplies reference code for answer-release checks. | [Protocol overview](docs/PROTOCOL.md) |
+| **[ActionGate](https://github.com/R-Mijo/ActionGate)** | Software toolkit for applying evidence-release checks and controlling an agent's tool actions, approvals and operating limits. | [Runtime integration](https://github.com/R-Mijo/ActionGate/blob/main/docs/RUNTIME.md) |
+
+**The protocol states what must be checked; the toolkit supplies controls an application can enforce.** A supported answer and an authorized business action are separate decisions. A release receipt never grants permission to issue a refund, send a message or change a record. See [how the projects fit together](docs/PROJECT_RELATIONSHIP.md).
 
 **0.2.1 | Python 3.11+ | Proprietary | No third-party runtime dependencies**
 
@@ -54,6 +63,8 @@ The Full AGP condition D is a study design to complete. This release prepares it
 
 ## Read and contribute
 
+- [Protocol overview and document map](docs/PROTOCOL.md)
+- [Relationship to ActionGate and the shared company example](docs/PROJECT_RELATIONSHIP.md)
 - [Methodology and revised prospectus](docs/METHODOLOGY.md)
 - [Independent validation protocol](docs/VALIDATION_PROTOCOL.md)
 - [Critical review of the original proposal](docs/CRITICAL_REVIEW.md)
