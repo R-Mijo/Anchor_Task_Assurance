@@ -1,14 +1,14 @@
-# Adaptive Grounded Prompting methodology
+# Anchor Task Assurance methodology
 
 Developed by Marco A. Version 0.2 experimental specification. 29 October 2026.
 
-Adaptive Grounded Prompting (AGP) is a proposed method for deciding whether an AI-assisted task result has the evidence and checks required by a stated policy before it enters a business workflow. It combines task classification, evidence records, verification requirements, and an execution receipt. The intended benefit is more consistent review and a clearer explanation of delivery decisions. That benefit remains a hypothesis to evaluate.
+Anchor Task Assurance is a proposed method for deciding whether an AI-assisted task result has the evidence and checks required by a stated policy before it enters a business workflow. It combines task classification, evidence records, verification requirements, and an execution receipt. The intended benefit is more consistent review and a clearer explanation of delivery decisions. That benefit remains a hypothesis to evaluate.
 
-This release is a bounded reference implementation. It does not establish improved model accuracy, production safety, regulatory compliance, or invention of the underlying practices. Read [related work](RELATED_WORK.md) before making originality claims. The [policy implementation](../agp/core.py) is authoritative for exact behavior.
+This release is a bounded reference implementation. It does not establish improved model accuracy, production safety, regulatory compliance, or invention of the underlying practices. Read [related work](RELATED_WORK.md) before making originality claims. The [policy implementation](../anchor_task_assurance/core.py) is authoritative for exact behavior.
 
 ## Scope and operating boundary
 
-AGP separates generating an answer from deciding whether that answer may be delivered. The generator may propose a result, supporting claims, and a delivery decision. Application policy evaluates the supplied evidence and verification record. A model's declaration that its own answer is correct must not be treated as proof.
+Anchor separates generating an answer from deciding whether that answer may be delivered. The generator may propose a result, supporting claims, and a delivery decision. Application policy evaluates the supplied evidence and verification record. A model's declaration that its own answer is correct must not be treated as proof.
 
 The initial policy workflow concerns preliminary recommendations. Releasing a recommendation does not approve a payment, alter an account, waive a policy, or authorize another business action. Those actions need their own permissions and controls. An integration must prevent rejected drafts from reaching the intended recipient or triggering a tool. Calling a gate without enforcing its result provides no release control.
 
@@ -108,6 +108,6 @@ The starter's SHA-256 value is a checksum over a canonical representation. It ca
 
 Evaluate the complete process against a strong conventional baseline using the same policy, cases, and outcomes. Keep development examples separate from held-out evaluation cases. Report generator accuracy separately from verification and gate behavior; counting every withheld result as a success would hide an unusable system. Measure unsupported claims, incorrect releases, unnecessary withholding and escalation, reviewer effort, latency, and total cost. Software checks alone do not demonstrate better AI behavior. See the evaluation protocol supplied with this project for study details.
 
-The offline tools prepare and screen generation drafts and prepare separate verifier packets. They do not ingest verifier results, authenticate review, or run a completed Full AGP study. Those integrations and independent semantic ratings remain required before reporting D's final release performance.
+The offline tools prepare and screen generation drafts and prepare separate verifier packets. They do not ingest verifier results, authenticate review, or run a completed Full Anchor study. Those integrations and independent semantic ratings remain required before reporting D's final release performance.
 
-The initial business hypothesis is that workflow owners will value reduced review effort and clearer evidence records enough to adopt this layer. A second hypothesis is that a portable implementation will help developers add these controls to existing tools. Both require interviews and controlled pilots. No market size, valuation, price, revenue, or GitHub popularity is established by this release. A sensible first milestone is one bounded workflow whose owner can compare AGP with the current process and publish the tradeoffs, including failures.
+The initial business hypothesis is that workflow owners will value reduced review effort and clearer evidence records enough to adopt this layer. A second hypothesis is that a portable implementation will help developers add these controls to existing tools. Both require interviews and controlled pilots. No market size, valuation, price, revenue, or GitHub popularity is established by this release. A sensible first milestone is one bounded workflow whose owner can compare Anchor with the current process and publish the tradeoffs, including failures.

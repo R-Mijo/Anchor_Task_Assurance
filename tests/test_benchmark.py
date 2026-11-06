@@ -9,11 +9,11 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from agp.benchmark import (
+from anchor_task_assurance.benchmark import (
     load_responses, load_study, prepare_study, render_prompt, score_study,
     strict_json_loads, validate_output, verifier_packets,
 )
-from agp.cli import demo
+from anchor_task_assurance.cli import demo
 
 
 def output():
@@ -115,7 +115,7 @@ class StudyTests(unittest.TestCase):
 
     def test_prepare_generates_each_method_without_gold_leak(self):
         self.assertEqual(self.manifest["generator_jobs"], 4)
-        self.assertEqual(self.manifest["full_agp_verifier_jobs"], 1)
+        self.assertEqual(self.manifest["full_anchor_verifier_jobs"], 1)
         self.assertEqual({job["method"] for job in self.manifest["jobs"]}, {"A", "B", "C", "D"})
         for job in self.manifest["jobs"]:
             prompt = (self.study / job["prompt_file"]).read_text(encoding="utf-8")

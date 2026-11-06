@@ -2,15 +2,24 @@
 
 # Anchor Task Assurance
 
-**Evidence-based task assurance — created by Marco Armijo (R-Mijo).**
+**The AI Fact-Checker — an evidence-and-review protocol with Python reference code.**
 
-Formerly Adaptive Grounded Prompting. Anchor checks evidence and verification before a task result is released. Agent tool authorization lives in the separate ActionGate project.
+Anchor Task Assurance is a proposed protocol for deciding whether an AI-generated task result has the evidence and verification required for release. This repository contains the protocol documentation, a reference implementation and evaluation tooling. Created by Marco Armijo (R-Mijo).
 
-AGP is an experimental Python reference implementation for checking whether an AI-generated task result meets an explicit evidence and release policy. It combines task classification, claim-to-source records, required verification checks, a conservative release gate, and portable receipts.
+The Python import is `anchor_task_assurance`, the installed distribution is `anchor-task-assurance`, and the command is `anchor`. The reference code demonstrates task classification, claim-to-source records, required verification checks, a conservative release gate and portable receipts. The protocol is experimental; it is not an independently certified or externally adopted standard.
 
-**0.2.1 | Python 3.11+ | Proprietary | No third-party runtime dependencies**
+## Protocol and tool: choose the right repository
 
-The project demonstrates software behavior. It has not yet demonstrated that AGP improves model accuracy, prevents prompt injection, or reduces business costs. The first release does not connect to a model provider, retrieve documents, authenticate approvers, execute payments, or provide a hosted service.
+| Repository | Role | Start here |
+| --- | --- | --- |
+| **Anchor Task Assurance — this repository** | Defines the Anchor evidence-and-review workflow and supplies reference code for answer-release checks. | [Protocol overview](docs/PROTOCOL.md) |
+| **[ActionGate](https://github.com/R-Mijo/ActionGate)** | Software toolkit for applying evidence-release checks and controlling an agent's tool actions, approvals and operating limits. | [Runtime integration](https://github.com/R-Mijo/ActionGate/blob/main/docs/RUNTIME.md) |
+
+**The protocol states what must be checked; the toolkit supplies controls an application can enforce.** A supported answer and an authorized business action are separate decisions. A release receipt never grants permission to issue a refund, send a message or change a record. See [how the projects fit together](docs/PROJECT_RELATIONSHIP.md).
+
+**0.2.2 | Python 3.11+ | Proprietary | No third-party runtime dependencies**
+
+The project demonstrates software behavior. It has not yet demonstrated that Anchor improves model accuracy, prevents prompt injection, or reduces business costs. The first release does not connect to a model provider, retrieve documents, authenticate approvers, execute payments, or provide a hosted service.
 
 ## In plain English
 
@@ -22,7 +31,7 @@ Use Python 3.11 or newer. Download this repository and open a terminal in the fo
 
 ```powershell
 python -m unittest discover -s tests -v
-python -m agp.cli demo
+python -m anchor_task_assurance.cli demo
 ```
 
 If `python` opens the Microsoft Store, follow [the Windows guide](docs/START_HERE_WINDOWS.md). The demo uses hand-authored fixtures and trusted example check results. It shows an accepted result, a blocked stale source, and checksum verification. It is not an LLM benchmark.
@@ -39,21 +48,23 @@ A citation that exists is not necessarily a citation that supports a statement. 
 
 `RELEASE` means permission to deliver the checked preliminary report. It never means payment authorization or permission to perform an external action.
 
-## Test AGP against real model responses
+## Test Anchor against real model responses
 
 The corrected expense-review pack contains 30 synthetic cases. Every comparison condition receives the same facts, sources, outcome labels, and JSON output contract. Gold answers stay out of generated prompts.
 
 ```powershell
-python -m agp.cli prepare --directory results/pilot --repeats 3 --seed 20261029
-python -m agp.cli --help
+python -m anchor_task_assurance.cli prepare --directory results/pilot --repeats 3 --seed 20261029
+python -m anchor_task_assurance.cli --help
 ```
 
 Preparation creates randomized prompt packets and a manifest. It makes no model calls. Follow [the validation protocol](docs/VALIDATION_PROTOCOL.md) and [the Windows guide](docs/START_HERE_WINDOWS.md) to collect responses, prepare verifier packets, and screen results. Automated screening checks structure and exact fields; human review is required for substantive accuracy, claim coverage, authority, and evidence support. Do not publish screening matches as validated accuracy.
 
-The Full AGP condition D is a study design to complete. This release prepares its generator and verifier packets, but has no verifier-response importer or automatic connection from those responses to the gate. D screening reports generator drafts only and leaves final release unevaluated. See [the integration boundary](docs/APPLY_TO_YOUR_WORKFLOW.md).
+The Full Anchor condition D is a study design to complete. This release prepares its generator and verifier packets, but has no verifier-response importer or automatic connection from those responses to the gate. D screening reports generator drafts only and leaves final release unevaluated. See [the integration boundary](docs/APPLY_TO_YOUR_WORKFLOW.md).
 
 ## Read and contribute
 
+- [Protocol overview and document map](docs/PROTOCOL.md)
+- [Relationship to ActionGate and the shared company example](docs/PROJECT_RELATIONSHIP.md)
 - [Methodology and revised prospectus](docs/METHODOLOGY.md)
 - [Independent validation protocol](docs/VALIDATION_PROTOCOL.md)
 - [Critical review of the original proposal](docs/CRITICAL_REVIEW.md)
@@ -64,9 +75,9 @@ The Full AGP condition D is a study design to complete. This release prepares it
 
 ## Why this project exists
 
-AI outputs need more than fluent wording before entering a business workflow. Developers need a clear way to state required evidence, collect checks, make a delivery decision, and explain that decision later. AGP explores a small implementation of that process.
+AI outputs need more than fluent wording before entering a business workflow. Developers need a clear way to state required evidence, collect checks, make a delivery decision, and explain that decision later. Anchor explores a small implementation of that process.
 
-The ingredients have substantial prior work, including [Microsoft Agentic Behavior Engineering](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/agentic-behavior-engineering), [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework), guardrail libraries, and assurance cases. AGP's proposed contribution is its particular integration and usability. Its PAL thresholds and verifier policy are provisional design choices awaiting calibration.
+The ingredients have substantial prior work, including [Microsoft Agentic Behavior Engineering](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/agentic-behavior-engineering), [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework), guardrail libraries, and assurance cases. Anchor's proposed contribution is its particular integration and usability. Its PAL thresholds and verifier policy are provisional design choices awaiting calibration.
 
 Useful early contributions include a real provider adapter, independent replication, stronger verifier coverage records, workflow-specific policy configuration, authenticated approval records, and integration examples. A reproducible failure report is welcome.
 
@@ -74,4 +85,4 @@ Copyright (c) 2026 Marco A. See [LICENSE](LICENSE).
 
 ## Ownership
 
-Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved. The current revision is proprietary with publicly visible source. See [LICENSE](LICENSE). Earlier AGP 0.2 material was public under MIT; existing grants are not revoked. See [licensing history](docs/LICENSING_HISTORY.md).
+Copyright (c) 2026 Marco Armijo (R-Mijo). All rights reserved. The current revision is proprietary with publicly visible source. See [LICENSE](LICENSE). Earlier Anchor 0.2 material was public under MIT; existing grants are not revoked. See [licensing history](docs/LICENSING_HISTORY.md).

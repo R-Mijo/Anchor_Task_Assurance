@@ -8,7 +8,7 @@ import copy
 import itertools
 import unittest
 
-from agp.core import (
+from anchor_task_assurance.core import (
     POLICY_VERSION, REQUIRED_CHECKS, Claim, PAL, Relationship, ReleaseDecision,
     Source, TaskProfile, build_receipt, decide_release, verify_receipt,
 )

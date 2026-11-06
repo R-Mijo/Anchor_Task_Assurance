@@ -1,4 +1,4 @@
-# AGP release software verification
+# Anchor release software verification
 
 Verified on 29 October 2026 for version 0.2.0, using Python 3.12.14 on Windows.
 
@@ -17,7 +17,7 @@ The suite covers strict score types and boundaries; conservative assurance floor
 
 ## What these results do not establish
 
-No real model-provider calls were made. No independent model-performance study or blind semantic human review was completed. There are no measured AGP-versus-baseline improvements, hallucination rates, attack resistance rates, cost savings or customer results in this release.
+No real model-provider calls were made. No independent model-performance study or blind semantic human review was completed. There are no measured Anchor-versus-baseline improvements, hallucination rates, attack resistance rates, cost savings or customer results in this release.
 
 Condition D is not connected end to end: the CLI prepares verifier packets, but does not ingest verifier responses or automatically combine them with the core gate. Source and locator checks are structural; trusted verification must establish support, complete claim coverage and actual independence. The workflow review and approval flags are trusted demonstration inputs, not authenticated authorization. The checksum is not a signature.
 
@@ -29,8 +29,8 @@ From the directory containing README.md:
 
 ```powershell
 python -m unittest discover -s tests -v
-python -m agp.cli demo
-python -m agp.cli prepare --directory results/new-rehearsal --repeats 1 --seed 20261029
+python -m anchor_task_assurance.cli demo
+python -m anchor_task_assurance.cli prepare --directory results/new-rehearsal --repeats 1 --seed 20261029
 ```
 
 The preparation directory must not already exist. The demonstration and preparation make no model calls. Follow VALIDATION_PROTOCOL.md for the separate empirical study.
